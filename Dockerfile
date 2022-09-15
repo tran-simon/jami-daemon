@@ -54,13 +54,15 @@ RUN git clone https://github.com/swig/swig.git && \
     make install
 
 WORKDIR /daemon
-COPY . .
+COPY contrib/ contrib/
 
 # Build daemon dependencies
 RUN mkdir -p contrib/native && \
     cd contrib/native && \
     ../bootstrap && \
     make -j$(nproc)
+
+COPY . .
 
 # Build the daemon
 RUN ./autogen.sh && \

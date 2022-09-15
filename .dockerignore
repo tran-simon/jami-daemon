@@ -5,3 +5,5 @@ contrib/x86_64-*
 contrib/arm*
 contrib/aarch64*
 contrib/i686*
+
+.git/
